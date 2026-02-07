@@ -27,16 +27,20 @@ const Dealers = () => {
   }
 
   const get_dealers = async ()=>{
+    console.log("called")
     const res = await fetch(dealer_url, {
       method: "GET"
     });
     const retobj = await res.json();
+    console.log("body", retobj)
     if(retobj.status === 200) {
       let all_dealers = Array.from(retobj.dealers)
       let states = [];
       all_dealers.forEach((dealer)=>{
         states.push(dealer.state)
       });
+
+      console.log("Dealers", all_dealers)
 
       setStates(Array.from(new Set(states)))
       setDealersList(all_dealers)
