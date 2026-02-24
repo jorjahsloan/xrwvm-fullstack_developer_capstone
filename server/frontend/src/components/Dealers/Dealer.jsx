@@ -19,7 +19,7 @@ const Dealer = () => {
   let curr_url = window.location.href;
   let root_url = curr_url.substring(0,curr_url.indexOf("dealer"));
   let params = useParams();
-  let id =params.id;
+  let id = params.id;
   let dealer_url = root_url+`djangoapp/dealer/${id}`;
   let reviews_url = root_url+`djangoapp/reviews/dealer/${id}`;
   let post_review = root_url+`postreview/${id}`;
@@ -41,7 +41,7 @@ const Dealer = () => {
       method: "GET"
     });
     const retobj = await res.json();
-    
+
     if(retobj.status === 200) {
       if(retobj.reviews.length > 0){
         setReviews(retobj.reviews)
