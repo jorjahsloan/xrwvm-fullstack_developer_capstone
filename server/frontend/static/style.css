@@ -1,6 +1,6 @@
 img{
-  width: 60%;
-  align-self: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .card{
@@ -25,7 +25,8 @@ img{
 
 .contact-card img{
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     display: block;
     margin-bottom: 12px;
 }
